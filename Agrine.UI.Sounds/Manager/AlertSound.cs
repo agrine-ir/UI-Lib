@@ -12,19 +12,30 @@ namespace Agrine.UI.Sounds.Manager
 {
     public class AlertSound
     {
-        private Form form;
         private SoundPlayer soundPlayer;
+        private string soundLocation = "Agrine.UI.Sounds.Resources.Alert.DSound.wav";
         private Agrine.UI.Sounds.Core.Enums.AlertSoundTypes type = Core.Enums.AlertSoundTypes.ASoundOne;
-        private readonly Stream ASoundOne = Assembly.GetExecutingAssembly().GetManifestResourceStream("Agrine.UI.Sounds.Resources.Alert.DSound.wav");
 
         public AlertSound()
         {
-            this.form = new Form();
-            this.form.Load += new EventHandler(this.Alert_Loaded);
-            this.soundPlayer = new SoundPlayer();
+            if (this.Enable && this.Alert != null)
+                this.Alert.Load += new EventHandler(this.Alert_Loaded);
+        }
+
+        public AlertSound(Form alert, Agrine.UI.Sounds.Core.Enums.AlertSoundTypes type = Core.Enums.AlertSoundTypes.ASoundOne, bool enable = true)
+        {
+            this.Enable = enable;
+            this.Alert = alert;
+            this.Type = type;
+
+            if (this.Enable && this.Alert != null)
+                this.Alert.Load += new EventHandler(this.Alert_Loaded);
+
         }
 
         public bool Enable { get; set; } = true;
+
+        public Form Alert { get; set; } = null;
 
 
 
@@ -37,10 +48,10 @@ namespace Agrine.UI.Sounds.Manager
                 switch (value)
                 {
                     case Core.Enums.AlertSoundTypes.ASoundOne:
-                        this.soundPlayer.Stream = ASoundOne;
+                        this.soundLocation = "Agrine.UI.Sounds.Resources.Alert.DSound.wav";
                         break;
                     case Core.Enums.AlertSoundTypes.ASoundTwo:
-                        this.soundPlayer.Stream = ASoundOne;
+                        this.soundLocation = "Agrine.UI.Sounds.Resources.Alert.DSound.wav";
                         break;
                 }
             }
@@ -49,7 +60,24 @@ namespace Agrine.UI.Sounds.Manager
         private void Alert_Loaded(object sender, EventArgs e)
         {
             if (this.Enable)
-                this.soundPlayer.Play();
+            {
+                System.Reflection.Assembly asm = Assembly.Load("Agrine.UI.Sounds");
+
+                using (Stream stream = asm.GetManifestResourceStream(this.soundLocation))
+                {
+                    if (stream == null)
+                    {
+                        MessageBox.Show("مشکلی در پخش صدای نمایش اعلان به وجود آمده است ! " + this.soundLocation);
+                        return;
+                    }
+
+                    using (this.soundPlayer = new SoundPlayer(stream))
+                    {
+                        this.soundPlayer.Play();
+                    }
+                }
+            }
+
         }
     }
 }

@@ -44,8 +44,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Animated\" />
-    <Folder Include="Resources\Static\" />
+    <Folder Include="Resources\Animated\Large\" />
+    <Folder Include="Resources\Animated\Medium\" />
+    <Folder Include="Resources\Animated\Small\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Static\Large\icons8-whatsapp-96.png" />
+    <EmbeddedResource Include="Resources\Static\Medium\icons8-whatsapp-48.png" />
+    <EmbeddedResource Include="Resources\Static\Small\icons8-whatsapp-34.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

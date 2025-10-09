@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrine.UI.Icons", "Agrine.U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrine.UI.Core", "Agrine.UI.Core\Agrine.UI.Core.csproj", "{6026B4B1-E7B4-471F-877E-DC1ABA9545C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{51264EBE-CC34-4443-AA5F-6A4999D86685}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6026B4B1-E7B4-471F-877E-DC1ABA9545C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6026B4B1-E7B4-471F-877E-DC1ABA9545C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6026B4B1-E7B4-471F-877E-DC1ABA9545C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51264EBE-CC34-4443-AA5F-6A4999D86685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51264EBE-CC34-4443-AA5F-6A4999D86685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51264EBE-CC34-4443-AA5F-6A4999D86685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51264EBE-CC34-4443-AA5F-6A4999D86685}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

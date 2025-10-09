@@ -10,23 +10,32 @@ using System.Windows.Forms;
 
 namespace Agrine.UI.Sounds.Manager
 {
-    public class MessageSound
+    public class MessageSound : Core.Interfaces.ISoundManager
     {
-        private Form form;
         private SoundPlayer soundPlayer;
+        private string soundLocation = "Agrine.UI.Sounds.Resources.Message.BSound.wav";
         private Agrine.UI.Sounds.Core.Enums.MessageSoundTypes type = Core.Enums.MessageSoundTypes.MSoundOne;
-        private readonly Stream MSoundOne = Assembly.GetExecutingAssembly().GetManifestResourceStream("Agrine.UI.Sounds.Resources.Message.BSound.wav");
-        private readonly Stream MSoundTwo = Assembly.GetExecutingAssembly().GetManifestResourceStream("Agrine.UI.Sounds.Resources.Message.CSound.wav");
-        private readonly Stream MSoundThree = Assembly.GetExecutingAssembly().GetManifestResourceStream("Agrine.UI.Sounds.Resources.Message.GSound.wav");
 
         public MessageSound()
         {
-            this.form = new Form();
-            this.form.Load += new EventHandler(this.Message_Loaded);
-            this.soundPlayer = new SoundPlayer();
+            if (this.Enable && this.Message != null)
+                this.Message.Load += new EventHandler(this.Message_Loaded);
+        }
+
+        public MessageSound(Form message, Agrine.UI.Sounds.Core.Enums.MessageSoundTypes type = Core.Enums.MessageSoundTypes.MSoundOne, bool enable = true)
+        {
+            this.Enable = enable;
+            this.Message = message;
+            this.Type = type;
+
+            if (this.Enable && this.Message != null)
+                this.Message.Load += new EventHandler(this.Message_Loaded);
+
         }
 
         public bool Enable { get; set; } = true;
+
+        public Form Message { get; set; } = null;
 
 
 
@@ -39,13 +48,13 @@ namespace Agrine.UI.Sounds.Manager
                 switch (value)
                 {
                     case Core.Enums.MessageSoundTypes.MSoundOne:
-                        this.soundPlayer.Stream = MSoundOne;
+                        this.soundLocation = "Agrine.UI.Sounds.Resources.Message.BSound.wav";
                         break;
                     case Core.Enums.MessageSoundTypes.MSoundTwo:
-                        this.soundPlayer.Stream = MSoundTwo;
+                        this.soundLocation = "Agrine.UI.Sounds.Resources.Message.CSound.wav";
                         break;
                     case Core.Enums.MessageSoundTypes.MSoundThree:
-                        this.soundPlayer.Stream = MSoundThree;
+                        this.soundLocation = "Agrine.UI.Sounds.Resources.Message.GSound.wav";
                         break;
                 }
             }
@@ -54,7 +63,24 @@ namespace Agrine.UI.Sounds.Manager
         private void Message_Loaded(object sender, EventArgs e)
         {
             if (this.Enable)
-                this.soundPlayer.Play();
+            {
+                System.Reflection.Assembly asm = Assembly.Load("Agrine.UI.Sounds");
+
+                using (Stream stream = asm.GetManifestResourceStream(this.soundLocation))
+                {
+                    if (stream == null)
+                    {
+                        MessageBox.Show("مشکلی در پخش صدای نمایش پنجره پیام به وجود آمده است ! " + this.soundLocation);
+                        return;
+                    }
+
+                    using (this.soundPlayer = new SoundPlayer(stream))
+                    {
+                        this.soundPlayer.Play();
+                    }
+                }
+            }
+
         }
     }
 }
