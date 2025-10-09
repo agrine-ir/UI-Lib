@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +42,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\Interfaces.cs" />
+    <Compile Include="Manager\AlertSound.cs" />
+    <Compile Include="Manager\ClickSound.cs" />
+    <Compile Include="Manager\MessageSound.cs" />
+    <Compile Include="Manager\StartupSound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Startup\ASSound.wav" />
+    <EmbeddedResource Include="Resources\Startup\BSSound.wav" />
+    <EmbeddedResource Include="Resources\Startup\CSSound.wav" />
+    <EmbeddedResource Include="Resources\Startup\DSSound.wav" />
+    <EmbeddedResource Include="Resources\Startup\FSSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Startup\SplashScreenSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Alert\DSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Message\CSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Message\GSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Click\ASound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Message\BSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Click\HSound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
