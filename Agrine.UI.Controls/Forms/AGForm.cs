@@ -115,10 +115,10 @@ namespace Agrine.UI.Controls.Forms
             this.MainStyleManager = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +137,7 @@ namespace Agrine.UI.Controls.Forms
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(121, 55);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.buttonX1.TabIndex = 0;
             this.buttonX1.Text = "buttonX1";
             // 
@@ -158,12 +159,6 @@ namespace Agrine.UI.Controls.Forms
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Text = "tabControl1";
             // 
-            // tabItem1
-            // 
-            this.tabItem1.AttachedControl = this.tabControlPanel1;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "tabItem1";
-            // 
             // tabControlPanel1
             // 
             this.tabControlPanel1.DisabledBackColor = System.Drawing.Color.Empty;
@@ -181,11 +176,11 @@ namespace Agrine.UI.Controls.Forms
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
             // 
-            // tabItem2
+            // tabItem1
             // 
-            this.tabItem2.AttachedControl = this.tabControlPanel2;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "tabItem2";
+            this.tabItem1.AttachedControl = this.tabControlPanel1;
+            this.tabItem1.Name = "tabItem1";
+            this.tabItem1.Text = "tabItem1";
             // 
             // tabControlPanel2
             // 
@@ -203,6 +198,12 @@ namespace Agrine.UI.Controls.Forms
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 5;
             this.tabControlPanel2.TabItem = this.tabItem2;
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel2;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "tabItem2";
             // 
             // AGForm
             // 
