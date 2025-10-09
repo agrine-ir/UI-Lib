@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrine.UI.Controls", "Agrin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrine.UI.Sounds", "Agrine.UI.Sounds\Agrine.UI.Sounds.csproj", "{B965382D-0A76-4949-97E1-F277C6563ED3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrine.UI.Icons", "Agrine.UI.Icons\Agrine.UI.Icons.csproj", "{A45CBC28-CE6E-4696-B26C-4FD57CB7B5AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B965382D-0A76-4949-97E1-F277C6563ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B965382D-0A76-4949-97E1-F277C6563ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B965382D-0A76-4949-97E1-F277C6563ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45CBC28-CE6E-4696-B26C-4FD57CB7B5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45CBC28-CE6E-4696-B26C-4FD57CB7B5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45CBC28-CE6E-4696-B26C-4FD57CB7B5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45CBC28-CE6E-4696-B26C-4FD57CB7B5AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
