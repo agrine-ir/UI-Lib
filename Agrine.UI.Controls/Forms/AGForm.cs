@@ -1,28 +1,74 @@
 ﻿using Agrine.UI.Sounds.Manager;
+using DevComponents.DotNetBar;
+
 
 namespace Agrine.UI.Controls.Forms
 {
+    /// <summary>
+    /// Represents a custom base form with built-in theme, style, palette, and startup sound control.
+    /// </summary>
     public class AGForm : DevComponents.DotNetBar.OfficeForm
     {
-        private StartupSound sound;
+        #region Fields
+
+        private StartupSound startupSound;
         private System.ComponentModel.IContainer components;
         private DevComponents.DotNetBar.StyleManager MainStyleManager;
+
         private Agrine.UI.Controls.Core.Enums.Appearance.Themes theme = Core.Enums.Appearance.Themes.Auto;
         private Agrine.UI.Controls.Core.Enums.Appearance.Styles style = Core.Enums.Appearance.Styles.Office2007;
         private Agrine.UI.Controls.Core.Enums.Appearance.Palettes palette = Core.Enums.Appearance.Palettes.Gray;
-        private StartupSound startupSound;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AGForm"/> class and configures default appearance settings.
+        /// </summary>
         public AGForm()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            this.startupSound = new StartupSound(this);
         }
 
+        #endregion
 
+        #region Sound Settings
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the form's startup sound is enabled.
+        /// </summary>
+        public bool EnableSound
+        {
+            get => this.startupSound.Enable;
+            set => this.startupSound.Enable = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the type of sound played when the form starts.
+        /// </summary>
+        public Agrine.UI.Sounds.Core.Enums.StartupSoundTypes SoundTypes
+        {
+            get => this.startupSound.Type;
+            set => this.startupSound.Type = value;
+        }
+
+        #endregion
+
+        #region Appearance Settings
+
+        /// <summary>
+        /// Gets or sets the overall theme of the form (Auto, Light, Dark).
+        /// </summary>
         public Agrine.UI.Controls.Core.Enums.Appearance.Themes Theme
         {
-            get { return this.theme; }
+            get => this.theme;
             set
             {
                 this.theme = value;
+
+                // TODO: Implement theme switching logic if needed.
                 switch (value)
                 {
                     case Core.Enums.Appearance.Themes.Auto:
@@ -35,12 +81,17 @@ namespace Agrine.UI.Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Gets or sets the visual style (e.g., Office2007, Office2010).
+        /// </summary>
         public Agrine.UI.Controls.Core.Enums.Appearance.Styles Style
         {
-            get { return this.style; }
+            get => this.style;
             set
             {
                 this.style = value;
+
+                // Apply the selected style to the main style manager.
                 switch (value)
                 {
                     case Core.Enums.Appearance.Styles.Office2007:
@@ -53,12 +104,17 @@ namespace Agrine.UI.Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color palette of the form.
+        /// </summary>
         public Agrine.UI.Controls.Core.Enums.Appearance.Palettes Palette
         {
-            get { return this.palette; }
+            get => this.palette;
             set
             {
                 this.palette = value;
+
+                // Apply a color tint based on the selected palette.
                 switch (value)
                 {
                     case Core.Enums.Appearance.Palettes.White:
@@ -98,34 +154,41 @@ namespace Agrine.UI.Controls.Forms
             }
         }
 
+        #endregion
 
+        #region Initialization
 
-
+        /// <summary>
+        /// Initializes the form components and sets default style parameters.
+        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.MainStyleManager = new DevComponents.DotNetBar.StyleManager(this.components);
             this.SuspendLayout();
-            // 
-            // MainStyleManager
-            // 
+
+            // MainStyleManager configuration
             this.MainStyleManager.ManagerColorTint = System.Drawing.Color.Gray;
-            this.MainStyleManager.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Black;
-            this.MainStyleManager.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(71)))), ((int)(((byte)(42))))));
-            // 
-            // AGForm
-            // 
+            this.MainStyleManager.ManagerStyle = eStyle.Office2007VistaGlass;
+            this.MainStyleManager.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(
+                System.Drawing.Color.White,
+                System.Drawing.Color.FromArgb(183, 71, 42)
+            );
+
+            // AGForm configuration
             this.CaptionFont = new System.Drawing.Font("IRANSansX", 9F, System.Drawing.FontStyle.Bold);
             this.ClientSize = new System.Drawing.Size(590, 360);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
-            this.Font = new System.Drawing.Font("IRANSansX", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("IRANSansX", 9F, System.Drawing.FontStyle.Regular);
             this.Name = "AGForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "پنجره";
             this.TitleText = "پنجره";
-            this.ResumeLayout(false);
 
+            this.ResumeLayout(false);
         }
+
+        #endregion
     }
 }

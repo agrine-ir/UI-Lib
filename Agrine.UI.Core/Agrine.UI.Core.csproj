@@ -44,7 +44,15 @@
     <Compile Include="Base\AgrineFonts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Images\Personal\" />
+    <Folder Include="Resources\Logos\Agrine\" />
+    <Folder Include="Resources\Logos\BankCheck\" />
+    <Folder Include="Resources\Logos\Calculator\" />
+    <Folder Include="Resources\Splashes\Agrine\" />
+    <Folder Include="Resources\Splashes\BankCheck\" />
+    <Folder Include="Resources\Splashes\Calculator\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\IRANSansX-Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\IRANSansX-Regular.ttf" />
