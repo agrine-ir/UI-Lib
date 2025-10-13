@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="Graphics\Shapes\AGCircle.cs" />
     <Compile Include="Graphics\Shapes\AGDiamond.cs" />
+    <Compile Include="Graphics\Shapes\AGEllipse.cs" />
     <Compile Include="Graphics\Shapes\AGRectangle.cs" />
     <Compile Include="Graphics\Shapes\AGStar.cs" />
     <Compile Include="Graphics\Shapes\AGTriangle.cs" />

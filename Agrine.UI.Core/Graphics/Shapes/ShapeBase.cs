@@ -8,6 +8,17 @@ using System.Threading.Tasks;
 
 namespace Agrine.UI.Core.Graphics.Shapes
 {
+
+    public enum ShapeType
+    {
+        None,
+        Rectangle,
+        Circle,
+        Ellipse,
+        Triangle,
+        Diamond,
+        Star,
+    }
     public abstract class ShapeBase : IShape
     {
         public Point Location { get; set; }

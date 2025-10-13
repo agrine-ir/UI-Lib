@@ -10,7 +10,7 @@ namespace Agrine.UI.Core.Graphics.Shapes
 {
     public class AGStar : ShapeBase
     {
-        public int Points { get; set; } = 5; // تعداد شاخه‌ها
+        public int Points { get; set; } = 5;
 
         public AGStar(Point location, Size size)
             : base(location, size) { }
