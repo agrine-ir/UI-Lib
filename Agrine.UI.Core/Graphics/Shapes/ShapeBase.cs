@@ -19,6 +19,20 @@ namespace Agrine.UI.Core.Graphics.Shapes
         Diamond,
         Star,
     }
+
+    public enum ShapeAlignments
+    {
+        None,
+        Center,
+        Left,
+        Right,
+        Top,
+        Bottom,
+        Stretch
+    }
+
+
+
     public abstract class ShapeBase : IShape
     {
         public Point Location { get; set; }

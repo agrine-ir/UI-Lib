@@ -89,6 +89,10 @@
       <Project>{60c42369-0b3a-47a7-ad7d-9725d4fdaa21}</Project>
       <Name>Agrine.UI.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Agrine.UI.Core\Agrine.UI.Core.csproj">
+      <Project>{6026b4b1-e7b4-471f-877e-dc1aba9545c8}</Project>
+      <Name>Agrine.UI.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Agrine.UI.Sounds\Agrine.UI.Sounds.csproj">
       <Project>{b965382d-0a76-4949-97e1-f277c6563ed3}</Project>
       <Name>Agrine.UI.Sounds</Name>
