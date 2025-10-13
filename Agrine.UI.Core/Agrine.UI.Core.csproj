@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Graphics\Logos\" />
     <Folder Include="Resources\Images\Personal\" />
     <Folder Include="Resources\Logos\Agrine\" />
     <Folder Include="Resources\Logos\BankCheck\" />
