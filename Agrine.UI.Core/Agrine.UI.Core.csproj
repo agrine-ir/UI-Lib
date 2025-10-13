@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="Graphics\Shapes\AGCircle.cs" />
     <Compile Include="Graphics\Shapes\AGRectangle.cs" />
+    <Compile Include="Graphics\Shapes\AGTriangle.cs" />
     <Compile Include="Graphics\Shapes\IShape.cs" />
     <Compile Include="Graphics\Shapes\ShapeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
