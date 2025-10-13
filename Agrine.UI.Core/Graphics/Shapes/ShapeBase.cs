@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Agrine.UI.Core.Graphics.Shapes
 {
 
-    public enum ShapeType
+    public enum ShapeTypes
     {
         None,
         Rectangle,
