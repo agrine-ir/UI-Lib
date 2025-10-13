@@ -5,14 +5,13 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Agrine.UI.Core.Components
+namespace YourProject.Graphics
 {
     public class AGCanvas : Control
     {
         private IShape _shape;
         private ShapeTypes _selectedShape = ShapeTypes.None;
         private ShapeAlignments _alignment = ShapeAlignments.Center;
-
         private Size _shapeSize = new Size(150, 100);
 
         [Category("AGCanvas")]
@@ -25,6 +24,7 @@ namespace Agrine.UI.Core.Components
                 _selectedShape = value;
                 CreateShape();
                 Invalidate();
+                UpdateCanvasCorners();
             }
         }
 
@@ -38,6 +38,7 @@ namespace Agrine.UI.Core.Components
                 _alignment = value;
                 UpdateShapePosition();
                 Invalidate();
+                UpdateCanvasCorners();
             }
         }
 
@@ -51,6 +52,7 @@ namespace Agrine.UI.Core.Components
                 _shapeSize = value;
                 UpdateShapePosition();
                 Invalidate();
+                UpdateCanvasCorners();
             }
         }
 
@@ -108,6 +110,7 @@ namespace Agrine.UI.Core.Components
             }
 
             UpdateShapePosition();
+            UpdateCanvasCorners();
         }
 
         private void UpdateShapePosition()
@@ -145,7 +148,6 @@ namespace Agrine.UI.Core.Components
                     loc = new Point(0, 0);
                     break;
                 case ShapeAlignments.None:
-                    // Keep current shape position
                     loc = _shape.Location;
                     break;
             }
@@ -154,10 +156,50 @@ namespace Agrine.UI.Core.Components
             _shape.Size = shapeSize;
         }
 
+        /// <summary>
+        /// Applies rounded corners to AGCanvas 
+        /// only if the shape is Rectangle, alignment is Stretch, and CornerRadius > 0.
+        /// </summary>
+        private void UpdateCanvasCorners()
+        {
+            if (_shape == null)
+            {
+                this.Region = null;
+                return;
+            }
+
+            bool isRectangle = _selectedShape == ShapeTypes.Rectangle;
+            bool isStretch = _alignment == ShapeAlignments.Stretch;
+            bool hasRadius = _shape.CornerRadius > 0;
+
+            if (isRectangle && isStretch && hasRadius)
+            {
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    float radius = _shape.CornerRadius;
+                    Rectangle rect = this.ClientRectangle;
+
+                    float d = radius * 2;
+                    path.AddArc(rect.X, rect.Y, d, d, 180, 90);
+                    path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
+                    path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
+                    path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
+                    path.CloseFigure();
+
+                    this.Region = new Region(path);
+                }
+            }
+            else
+            {
+                this.Region = null; // revert to normal rectangular canvas
+            }
+        }
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             UpdateShapePosition();
+            UpdateCanvasCorners();
             Invalidate();
         }
 
@@ -171,6 +213,7 @@ namespace Agrine.UI.Core.Components
             if (_shape != null)
             {
                 _shape.Draw(g);
+                UpdateCanvasCorners(); // keep corners synced with shape radius
             }
             else
             {
