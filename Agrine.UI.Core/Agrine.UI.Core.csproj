@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,10 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\AgrineFonts.cs" />
+    <Compile Include="Graphics\Shapes\IShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Graphics\Shapes\" />
     <Folder Include="Resources\Images\Personal\" />
     <Folder Include="Resources\Logos\Agrine\" />
     <Folder Include="Resources\Logos\BankCheck\" />
