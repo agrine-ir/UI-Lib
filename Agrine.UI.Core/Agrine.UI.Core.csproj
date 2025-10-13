@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\AgrineFonts.cs" />
+    <Compile Include="Graphics\Shapes\AGRectangle.cs" />
     <Compile Include="Graphics\Shapes\IShape.cs" />
     <Compile Include="Graphics\Shapes\ShapeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
