@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Agrine.UI.Core.Graphics.Shapes
 {
@@ -13,7 +8,7 @@ namespace Agrine.UI.Core.Graphics.Shapes
         public AGRectangle(Point location, Size size)
            : base(location, size) { }
 
-        public override void Draw(Graphics g)
+        public override void Draw(System.Drawing.Graphics g)
         {
             Rectangle rect = new Rectangle(Location, Size);
 

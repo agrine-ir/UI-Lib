@@ -16,7 +16,7 @@ namespace Agrine.UI.Core.Graphics.Shapes
         float BorderThickness { get; set; }
         float CornerRadius { get; set; }
 
-        void Draw(Graphics g);
+        void Draw(System.Drawing.Graphics g);
         bool Contains(Point p);
         void Move(int dx, int dy);
         void Resize(Size newSize);

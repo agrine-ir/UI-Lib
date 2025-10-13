@@ -13,7 +13,7 @@ namespace Agrine.UI.Core.Graphics.Shapes
         public AGCircle(Point location, Size size)
             : base(location, size) { }
 
-        public override void Draw(Graphics g)
+        public override void Draw(System.Drawing.Graphics g)
         {
             Rectangle rect = new Rectangle(Location, Size);
 

@@ -27,7 +27,7 @@ namespace Agrine.UI.Core.Graphics.Shapes
             Size = size;
         }
 
-        public abstract void Draw(Graphics g);
+        public abstract void Draw(System.Drawing.Graphics g);
         public abstract bool Contains(Point p);
 
         public virtual void Move(int dx, int dy)
