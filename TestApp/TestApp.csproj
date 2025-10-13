@@ -69,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +93,21 @@
       <Project>{b965382d-0a76-4949-97e1-f277c6563ed3}</Project>
       <Name>Agrine.UI.Sounds</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgrineCal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgrineCalc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgrineCalculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgrineCalcu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgrineCalcula.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

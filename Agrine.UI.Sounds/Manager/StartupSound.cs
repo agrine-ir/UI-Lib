@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -72,6 +73,12 @@ namespace Agrine.UI.Sounds.Manager
 
         private void Window_Loaded(object sender, EventArgs e)
         {
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
+
+
+
             if (this.Enable)
             {
                 System.Reflection.Assembly asm = Assembly.Load("Agrine.UI.Sounds");
