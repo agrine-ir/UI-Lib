@@ -129,6 +129,7 @@
             this.BackgroundImage = global::TestApp.Properties.Resources.AgrineCalcu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(895, 554);
+            this.ControlBox = true;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -137,8 +138,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.EnableSound = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
             this.Name = "Form1";
             this.Palette = Agrine.UI.Controls.Core.Enums.Appearance.Palettes.Gold;
             this.Text = "ماشین حساب مهندسی آگرین";

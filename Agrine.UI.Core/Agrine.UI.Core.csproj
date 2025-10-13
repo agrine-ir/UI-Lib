@@ -47,6 +47,9 @@
     <Compile Include="Components\AGCanvas.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\AGLogos.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Graphics\Shapes\AGCircle.cs" />
     <Compile Include="Graphics\Shapes\AGDiamond.cs" />
     <Compile Include="Graphics\Shapes\AGEllipse.cs" />
