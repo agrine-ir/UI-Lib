@@ -1,20 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using System.Windows.Forms;
 
 namespace Agrine.UI.Controls.Forms
 {
+
     public partial class AGFormSplash : AGForm
     {
+
+
         public AGFormSplash()
         {
-            InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.Inherit;
         }
+
+
+
+        public byte BorderRadius { get; set; } = 5;
+
+        public byte BorderSize { get; set; } = 3;
+
+        public Color BorderColor { get; set; } = Color.Tomato;
+
+
+
     }
+
+
+
 }

@@ -50,6 +50,9 @@
     <Compile Include="Components\AGLogos.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Graphics\Core\AGRadius.cs" />
+    <Compile Include="Graphics\Logos\ILogo.cs" />
+    <Compile Include="Graphics\Logos\LogoBase.cs" />
     <Compile Include="Graphics\Shapes\AGCircle.cs" />
     <Compile Include="Graphics\Shapes\AGDiamond.cs" />
     <Compile Include="Graphics\Shapes\AGEllipse.cs" />
@@ -59,9 +62,12 @@
     <Compile Include="Graphics\Shapes\IShape.cs" />
     <Compile Include="Graphics\Shapes\ShapeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Themes\Recipes\Dark.cs" />
+    <Compile Include="Themes\Recipes\IRecipe.cs" />
+    <Compile Include="Themes\Recipes\Light.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Graphics\Logos\" />
+    <Folder Include="Graphics\Splashes\" />
     <Folder Include="Resources\Images\Personal\" />
     <Folder Include="Resources\Logos\Agrine\" />
     <Folder Include="Resources\Logos\BankCheck\" />

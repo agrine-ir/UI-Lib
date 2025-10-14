@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace YourProject.Graphics
+namespace Agrine.UI.Core.Components
 {
     public class AGCanvas : Control
     {
