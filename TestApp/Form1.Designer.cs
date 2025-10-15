@@ -123,10 +123,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 22F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BorderRadius = ((byte)(80));
+            this.BorderSize = ((byte)(10));
             this.ClientSize = new System.Drawing.Size(895, 554);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -135,10 +136,11 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.CornerRadius = 40;
             this.EnableSound = false;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
+            this.Opacity = 1D;
             this.Palette = Agrine.UI.Controls.Core.Enums.Appearance.Palettes.Gold;
             this.Text = "ماشین حساب مهندسی آگرین";
             this.ResumeLayout(false);

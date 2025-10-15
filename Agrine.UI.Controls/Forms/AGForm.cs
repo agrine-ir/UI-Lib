@@ -1,5 +1,6 @@
 ﻿using Agrine.UI.Sounds.Manager;
 using DevComponents.DotNetBar;
+using System.ComponentModel;
 
 
 namespace Agrine.UI.Controls.Forms
@@ -36,6 +37,7 @@ namespace Agrine.UI.Controls.Forms
 
         #region Sound Settings
 
+        [Category("Sound")]
         /// <summary>
         /// Gets or sets a value indicating whether the form's startup sound is enabled.
         /// </summary>
@@ -45,6 +47,7 @@ namespace Agrine.UI.Controls.Forms
             set => this.startupSound.Enable = value;
         }
 
+        [Category("Sound")]
         /// <summary>
         /// Gets or sets the type of sound played when the form starts.
         /// </summary>
@@ -58,6 +61,7 @@ namespace Agrine.UI.Controls.Forms
 
         #region Appearance Settings
 
+        [Category("Appearance Pro")]
         /// <summary>
         /// Gets or sets the overall theme of the form (Auto, Light, Dark).
         /// </summary>
@@ -81,6 +85,7 @@ namespace Agrine.UI.Controls.Forms
             }
         }
 
+        [Category("Appearance Pro")]
         /// <summary>
         /// Gets or sets the visual style (e.g., Office2007, Office2010).
         /// </summary>
@@ -104,6 +109,7 @@ namespace Agrine.UI.Controls.Forms
             }
         }
 
+        [Category("Appearance Pro")]
         /// <summary>
         /// Gets or sets the color palette of the form.
         /// </summary>
